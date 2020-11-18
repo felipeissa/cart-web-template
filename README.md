@@ -18,11 +18,11 @@
 
 ### **The APP must have** ###
 
-* __List of items page__: You can get it using the following call:
+* __List of items page__: You can get it using the following call, replacing "burger" by the search term provided by the user (check [Swagger file](https://github.com/spoonrocker/cart-mobile-template/blob/main/search-swagger.yaml)) :
 
 ```sh
-curl --location --request POST 'https://api.rockspoon.io/search/v2/composed' \
---header 'key: {key}' \
+curl --location --request POST 'https://stg-api.rockspoon.io/search/v2/composed' \
+--header 'key: 56e379ffa58d2ac1a854abd75b2d76e5fa4b54e551332c83d7c87b3c2fd3caeada916dc330bab3cde7e72114874666cb6e94bd5c6e2b54fd1fbb41a99a9b85d7a3be2e2b1f8e5ba7ed75fbd170d0efaefe61d9b851815771d55048a53ebe34e0' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --data-raw '{ 
@@ -30,8 +30,7 @@ curl --location --request POST 'https://api.rockspoon.io/search/v2/composed' \
     "page": 1,
     "size": 10,
     "params": {
-        "term":["burger"],
-        "tags": [ "cuisine\u003eamerican"]
+        "term":["burger"]
     }
 }'
 ```
@@ -41,11 +40,11 @@ curl --location --request POST 'https://api.rockspoon.io/search/v2/composed' \
 * When selecting an item, the item details page must be displayed.
    
   
-- __Item details page__. You can get it using the following call: 
+- __Item details page__. You can get it using the following call replacing {itemId} by the id of the item returned on the search (check [Swagger file](https://github.com/spoonrocker/cart-mobile-template/blob/main/catalog-swagger.yaml)) :  
 ```sh
-curl 'https://api.rockspoon.io/catalog/consumer/item/{itemId}' \
+curl 'https://stg-api.rockspoon.io/catalog/consumer/item/{itemId}' \
   -H 'Accept: application/json' \
-  -H 'key: {key}'
+  -H 'key: 56e379ffa58d2ac1a854abd75b2d76e5fa4b54e551332c83d7c87b3c2fd3caeada916dc330bab3cde7e72114874666cb6e94bd5c6e2b54fd1fbb41a99a9b85d7a3be2e2b1f8e5ba7ed75fbd170d0efaefe61d9b851815771d55048a53ebe34e0'
 ```
   * The item's page must show: Item's name, tags, price, availableFor, and sizes and prices.
 
