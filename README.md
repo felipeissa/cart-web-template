@@ -4,7 +4,7 @@
 ### Create an Angular 8 or above web APP that gets and displays information from RockSpoon's Search API
 
 - The app will have two screens and should be responsive:
-  - The first one allows the user to search for items (plates) using RockSpoon Search API (https://dev-api.rockspoon.io/search/v2/composed). The search can be performed using the search text field. 
+  - The first one allows the user to search for items (plates) using RockSpoon Search API. The search can be performed using the search text field. 
   - The second screen displays information when an item is selected from the list.
 
 
