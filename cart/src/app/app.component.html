@@ -1,0 +1,15 @@
+<form>
+  <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <input
+      matInput
+      name="text-form"
+      placeholder="Search here"
+      [(ngModel)]="searchKey"
+      (change)="onChange()">
+  </mat-form-field>
+</form>
+
+
+
+{{ searchResult | json }}
